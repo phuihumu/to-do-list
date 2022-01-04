@@ -1,6 +1,6 @@
 
 function setTodoComplete(project) {
-    if (project.getStatus() === "Incomplete") {
+    if (project.getProjectStatus() === "Incomplete") {
         project.status = "Complete";
     }
 

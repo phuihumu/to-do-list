@@ -8,8 +8,18 @@ const Project = () => {
     let status = "Incomplete";
     const getProjectTitle = () => title;
     const getProjectDescription = () => description;
-    const getDueDate= () => dueDate;
-    const getPriority = () => priority;
-    const getStatus = () => status;
-    return {getProjectTitle,getProjectDescription,getDueDate,getPriority,getStatus}
+    const getProjectDueDate= () => dueDate;
+    const getProjectPriority = () => priority;
+    const getProjectStatus = () => status;
+    return {getProjectTitle,getProjectDescription,getProjectDueDate,getProjectPriority,getProjectStatus}
+};
+
+const Tasks = () => {
+    let title, description, priority;
+    let status = "Incomplete";
+    const getTaskTitle = () => title;
+    const getTaskDescription = () => description;
+    const getTaskPriority = () => priority;
+    const getTaskStatus = () => status;
+    return {getTaskTitle,getTaskDescription,getTaskPriority,getTaskStatus}
 };
