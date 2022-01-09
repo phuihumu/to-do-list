@@ -1,6 +1,6 @@
 import displayList from './displayTodoList';
 
-function displayPage() {
+function displayPage(project) {
     const element = document.querySelector('#content');
     
     const titleOfPage = document.createElement('div');
@@ -9,7 +9,7 @@ function displayPage() {
 
     const listContainer = document.createElement('div');
     listContainer.classList.add('listContainer');
-    listContainer.appendChild(displayList());
+    listContainer.appendChild(displayList(project));
 
     const footer = document.createElement('div');
     footer.classList.add('footer');

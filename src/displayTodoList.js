@@ -1,9 +1,10 @@
+import displayProjectCard from './displayProjectCards';
 
 function displayList(projects) {
     const todoList = document.createElement('div');
     todoList.classList.add('todoList');
 
-    todoList.appendChild(projects);
+    todoList.appendChild(displayProjectCard(projects));
 
     const newProject = document.createElement('button');
     newProject.classList.add('newProjectButton');

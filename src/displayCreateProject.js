@@ -36,6 +36,20 @@ function displayCreateProject() {
     createPriorityInput.id = 'priority';
     createPriorityInput.type = 'text';
     createPriorityInput.placeholder = 'Enter Project Priority';
+
+    createProjectContainer.appendChild(createTitleLabel);
+    createProjectContainer.appendChild(createTitleInput);
+    createProjectContainer.appendChild(createDescriptionLabel);
+    createProjectContainer.appendChild(createDescriptionInput);
+    createProjectContainer.appendChild(createDateLabel);
+    createProjectContainer.appendChild(createDateInput);
+    createProjectContainer.appendChild(createPriorityLabel);
+    createProjectContainer.appendChild(createPriorityInput);
+
+    createScreen.appendChild(createTitle);
+    createScreen.appendChild(createProjectContainer);
+
+    return createScreen;
 }
 
 export default displayCreateProject;

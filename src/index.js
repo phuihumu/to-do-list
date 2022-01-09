@@ -1,6 +1,7 @@
 import createTodos from './createTodos';
 import setTodoComplete from './updateTodoStatus';
 import changeTodoPriority from './changeTodoPriority';
+import displayPage from './displayPage';
 
 //todo-projects
 const Project = () => {
@@ -23,3 +24,6 @@ const Tasks = () => {
     const getTaskStatus = () => status;
     return {getTaskTitle,getTaskDescription,getTaskPriority,getTaskStatus}
 };
+
+displayPage();
+
