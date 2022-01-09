@@ -25,5 +25,5 @@ const Tasks = () => {
     return {getTaskTitle,getTaskDescription,getTaskPriority,getTaskStatus}
 };
 
-displayPage();
+displayPage(createTodos());
 
