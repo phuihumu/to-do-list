@@ -1,4 +1,4 @@
-import createTodos from './createTodos';
+import {createTodos, defaultTodo} from './createTodos';
 import setTodoComplete from './updateTodoStatus';
 import changeTodoPriority from './changeTodoPriority';
 import displayPage from './displayPage';
@@ -25,5 +25,5 @@ const Tasks = () => {
     return {getTaskTitle,getTaskDescription,getTaskPriority,getTaskStatus}
 };
 
-displayPage(createTodos());
+displayPage(defaultTodo());
 
