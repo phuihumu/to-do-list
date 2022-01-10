@@ -2,10 +2,10 @@ import Project from './projectObject';
 
 function createTodos() {
     const todoItem = Project();
-    todoItem.setProjectTitle(document.querySelector('#title'));
-    todoItem.setProjectDescription(document.querySelector('#description'));
-    todoItem.setProjectDate(document.querySelector('#date'));
-    todoItem.setProjectPriority(document.querySelector('#priority'));
+    todoItem.setProjectTitle(document.querySelector('#title').value);
+    todoItem.setProjectDescription(document.querySelector('#description').value);
+    todoItem.setProjectDate(document.querySelector('#date').value);
+    todoItem.setProjectPriority(document.querySelector('#priority').value);
     return todoItem;
 }
 

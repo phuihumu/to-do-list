@@ -2,6 +2,7 @@ import {createTodos, defaultTodo} from './createTodos';
 import setTodoComplete from './updateTodoStatus';
 import changeTodoPriority from './changeTodoPriority';
 import displayPage from './displayPage';
+import displayCreateProject from './displayCreateProject';
 
 const Tasks = () => {
     let title, description, priority;
@@ -14,4 +15,9 @@ const Tasks = () => {
 };
 
 displayPage(defaultTodo());
+
+const newProjectBtn = document.querySelector(".newProjectButton");
+newProjectBtn.addEventListener("click", () => {
+    document.querySelector('#content').appendChild((displayCreateProject()));
+});
 
