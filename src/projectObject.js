@@ -7,7 +7,14 @@ const Project = () => {
     const getProjectDueDate= () => dueDate;
     const getProjectPriority = () => priority;
     const getProjectStatus = () => status;
-    return {getProjectTitle,getProjectDescription,getProjectDueDate,getProjectPriority,getProjectStatus}
+
+    const setProjectTitle = (inputTitle) => {title = inputTitle};
+    const setProjectDescription = (inputDescription) => {description = inputDescription};
+    const setProjectDate = (inputDate) => {dueDate = inputDate};
+    const setProjectPriority = (inputPriority) => {priority = inputPriority};
+    const setProjectStatus = (inputStatus) => {status = inputStatus};
+    return {getProjectTitle,getProjectDescription,getProjectDueDate,getProjectPriority,getProjectStatus
+    , setProjectTitle,setProjectDescription,setProjectDate,setProjectPriority,setProjectStatus}
 };
 
 export default Project;

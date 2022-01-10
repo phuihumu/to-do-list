@@ -2,19 +2,19 @@ import Project from './projectObject';
 
 function createTodos() {
     const todoItem = Project();
-    todoItem.title = document.querySelector('#title');
-    todoItem.description = document.querySelector('#description');
-    todoItem.dueDate = document.querySelector('#date')
-    todoItem.priority = document.querySelector('#priority');
+    todoItem.setProjectTitle(document.querySelector('#title'));
+    todoItem.setProjectDescription(document.querySelector('#description'));
+    todoItem.setProjectDate(document.querySelector('#date'));
+    todoItem.setProjectPriority(document.querySelector('#priority'));
     return todoItem;
 }
 
 function defaultTodo() {
     const defaultProject = Project();
-    defaultProject.title = 'New Project';
-    defaultProject.description = 'Add a Description';
-    defaultProject.dueDate = '1/1/2021';
-    defaultProject.priority = '1';
+    defaultProject.setProjectTitle('New Project');
+    defaultProject.setProjectDescription('Add a Description');
+    defaultProject.setProjectDate('1/1/2021');
+    defaultProject.setProjectPriority('1');
     return defaultProject;
 }
 
