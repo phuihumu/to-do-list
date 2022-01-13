@@ -3,6 +3,7 @@ import setTodoComplete from './updateTodoStatus';
 import changeTodoPriority from './changeTodoPriority';
 import displayPage from './displayPage';
 import displayCreateProject from './displayCreateProject';
+import './style.css';
 
 const Tasks = () => {
     let title, description, priority;
