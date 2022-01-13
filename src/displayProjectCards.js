@@ -4,6 +4,8 @@ function displayProjectCard(project) {
     const projectCard = document.createElement('div');
     projectCard.classList.add('project');
 
+    const projectLeft = document.createElement('div');
+    projectLeft.classList.add('projectLeft');
     const projectTitle = document.createElement('div');
     projectTitle.classList.add('pTitle');
     projectTitle.innerHTML = project.getProjectTitle();
@@ -16,15 +18,22 @@ function displayProjectCard(project) {
     const projectPriority = document.createElement('div');
     projectPriority.classList.add('pPriority');
     projectPriority.innerHTML = "Priority: " + project.getProjectPriority();
+
+    projectLeft.appendChild(projectTitle);
+    projectLeft.appendChild(projectDescription);
+    projectLeft.appendChild(projectDue);
+    projectLeft.appendChild(projectPriority);
+
+    const projectRight = document.createElement('div');
+    projectRight.classList.add('projectRight');
     const edit = new Image();
     edit.src = editIcon;
     edit.classList.add('editIcon');
 
-    projectCard.appendChild(projectTitle);
-    projectCard.appendChild(projectDescription);
-    projectCard.appendChild(projectDue);
-    projectCard.appendChild(projectPriority);
-    projectCard.appendChild(edit);
+    projectRight.appendChild(edit);
+
+    projectCard.appendChild(projectLeft);
+    projectCard.appendChild(projectRight);
 
     return projectCard;
 }

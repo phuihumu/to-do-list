@@ -24,10 +24,15 @@ body {
 
 .project {
     display: flex;
-    flex-direction: column;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.projectLeft, .projectRight {
+    display: flex;
+    flex-direction: column;
 }
 
 .pDescription, .pDate, .pPriority {
@@ -36,7 +41,7 @@ body {
 }
 
 .editIcon {
-    width: 2%;
+    width: 100%;
     height: auto;
 }
 
