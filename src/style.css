@@ -35,6 +35,11 @@ body {
     color: rgb(105, 105, 105);
 }
 
+.editIcon {
+    width: 2%;
+    height: auto;
+}
+
 .newProjectButton {
     width: 150px;
     height: 40px;

@@ -1,3 +1,4 @@
+import editIcon from './edit.png';
 
 function displayProjectCard(project) {
     const projectCard = document.createElement('div');
@@ -15,11 +16,15 @@ function displayProjectCard(project) {
     const projectPriority = document.createElement('div');
     projectPriority.classList.add('pPriority');
     projectPriority.innerHTML = "Priority: " + project.getProjectPriority();
+    const edit = new Image();
+    edit.src = editIcon;
+    edit.classList.add('editIcon');
 
     projectCard.appendChild(projectTitle);
     projectCard.appendChild(projectDescription);
     projectCard.appendChild(projectDue);
     projectCard.appendChild(projectPriority);
+    projectCard.appendChild(edit);
 
     return projectCard;
 }
