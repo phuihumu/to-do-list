@@ -11,10 +11,10 @@ function displayProjectCard(project) {
     projectDescription.innerHTML = project.getProjectDescription();
     const projectDue = document.createElement('div');
     projectDue.classList.add('pDate');
-    projectDue.innerHTML = project.getProjectDueDate();
+    projectDue.innerHTML = "Due Date: " + project.getProjectDueDate();
     const projectPriority = document.createElement('div');
     projectPriority.classList.add('pPriority');
-    projectPriority.innerHTML = project.getProjectPriority();
+    projectPriority.innerHTML = "Priority: " + project.getProjectPriority();
 
     projectCard.appendChild(projectTitle);
     projectCard.appendChild(projectDescription);
