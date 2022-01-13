@@ -12,6 +12,7 @@ function displayCreateProject() {
 
     const createTitleLabel = document.createElement('div');
     createTitleLabel.classList.add('createFormLabel');
+    createTitleLabel.innerHTML = 'Project Title';
     const createTitleInput = document.createElement('input');
     createTitleInput.id = 'title';
     createTitleInput.type = 'text';
@@ -19,6 +20,7 @@ function displayCreateProject() {
 
     const createDescriptionLabel = document.createElement('div');
     createDescriptionLabel.classList.add('createFormLabel');
+    createDescriptionLabel.innerHTML = 'Description'
     const createDescriptionInput = document.createElement('input');
     createDescriptionInput.id = 'description';
     createDescriptionInput.type = 'text';
@@ -26,12 +28,14 @@ function displayCreateProject() {
 
     const createDateLabel = document.createElement('div');
     createDateLabel.classList.add('createFormLabel');
+    createDateLabel.innerHTML = 'Due Date';
     const createDateInput = document.createElement('input');
     createDateInput.id = 'date';
     createDateInput.type = 'date';
 
     const createPriorityLabel = document.createElement('div');
     createPriorityLabel.classList.add('createFormLabel');
+    createPriorityLabel.innerHTML = 'Priority';
     const createPriorityInput = document.createElement('input');
     createPriorityInput.id = 'priority';
     createPriorityInput.type = 'text';

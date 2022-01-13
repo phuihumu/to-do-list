@@ -68,3 +68,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.createScreen {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
