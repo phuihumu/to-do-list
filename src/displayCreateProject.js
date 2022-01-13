@@ -1,5 +1,8 @@
 
 function displayCreateProject() {
+    const createScreenModal = document.createElement('div');
+    createScreenModal.classList.add('createScreenModal');
+
     const createScreen = document.createElement('div');
     createScreen.classList.add('createScreen');
 
@@ -36,10 +39,26 @@ function displayCreateProject() {
     const createPriorityLabel = document.createElement('div');
     createPriorityLabel.classList.add('createFormLabel');
     createPriorityLabel.innerHTML = 'Priority';
-    const createPriorityInput = document.createElement('input');
+    const createPriorityInput = document.createElement('select');
     createPriorityInput.id = 'priority';
-    createPriorityInput.type = 'text';
+    createPriorityInput.name = 'priority';
     createPriorityInput.placeholder = 'Enter Project Priority';
+    const priorityLow = document.createElement('option');
+    priorityLow.id = 'low';
+    priorityLow.value = 'low';
+    priorityLow.innerHTML = 'Low';
+    const priorityMedium = document.createElement('option');
+    priorityMedium.id = 'medium';
+    priorityMedium.value = 'medium';
+    priorityMedium.innerHTML = 'Medium';
+    const priorityHigh = document.createElement('option');
+    priorityHigh.id = 'high';
+    priorityHigh.value = 'high';
+    priorityHigh.innerHTML = 'High';
+    createPriorityInput.appendChild(priorityLow);
+    createPriorityInput.appendChild(priorityMedium);
+    createPriorityInput.appendChild(priorityHigh);
+
 
     createProjectContainer.appendChild(createTitleLabel);
     createProjectContainer.appendChild(createTitleInput);
@@ -53,7 +72,9 @@ function displayCreateProject() {
     createScreen.appendChild(createTitle);
     createScreen.appendChild(createProjectContainer);
 
-    return createScreen;
+    createScreenModal.appendChild(createScreen);
+
+    return createScreenModal;
 }
 
 export default displayCreateProject;
