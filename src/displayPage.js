@@ -1,4 +1,5 @@
 import displayList from './displayTodoList';
+import displayCreateProject from './displayCreateProject';
 
 function displayPage(project) {
     const element = document.querySelector('#content');
@@ -17,6 +18,7 @@ function displayPage(project) {
 
     element.appendChild(titleOfPage);
     element.appendChild(listContainer);
+    element.appendChild(displayCreateProject());
     element.appendChild(footer);
 }
 

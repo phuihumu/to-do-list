@@ -19,6 +19,11 @@ displayPage(defaultTodo());
 
 const newProjectBtn = document.querySelector(".newProjectButton");
 newProjectBtn.addEventListener("click", () => {
-    document.querySelector('#content').appendChild((displayCreateProject()));
+    document.querySelector('.createScreenModal').style.display = "flex";
+});
+
+const createProjBtn = document.querySelector(".createProjectButton");
+createProjBtn.addEventListener("click", () => {
+    document.querySelector('.createScreenModal').style.display = "none";
 });
 
