@@ -59,6 +59,9 @@ function displayCreateProject() {
     createPriorityInput.appendChild(priorityMedium);
     createPriorityInput.appendChild(priorityHigh);
 
+    const createProjectButton = document.createElement('button');
+    createProjectButton.classList.add('createProjectButton');
+    createProjectButton.innerHTML = 'Create';
 
     createProjectContainer.appendChild(createTitleLabel);
     createProjectContainer.appendChild(createTitleInput);
@@ -71,6 +74,7 @@ function displayCreateProject() {
 
     createScreen.appendChild(createTitle);
     createScreen.appendChild(createProjectContainer);
+    createScreen.appendChild(createProjectButton);
 
     createScreenModal.appendChild(createScreen);
 

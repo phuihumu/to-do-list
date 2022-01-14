@@ -14,7 +14,7 @@ function defaultTodo() {
     defaultProject.setProjectTitle('New Project');
     defaultProject.setProjectDescription('Add a Description');
     defaultProject.setProjectDate('1/1/2021');
-    defaultProject.setProjectPriority('1');
+    defaultProject.setProjectPriority('Low');
     return defaultProject;
 }
 
