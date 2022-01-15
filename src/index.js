@@ -51,3 +51,8 @@ createProjBtn.addEventListener("click", () => {
     addProject(createTodos());
 });
 
+const closeCreateScreen = document.querySelector('.closeIcon');
+closeCreateScreen.addEventListener("click", () => {
+    document.querySelector('.createScreenModal').style.display = "none";
+});
+
