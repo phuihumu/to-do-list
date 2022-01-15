@@ -56,7 +56,9 @@ body {
     border-style: none;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .footer {
@@ -121,4 +123,9 @@ input, select {
     border-style: none;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+.todoList {
+    position: relative;
+    padding-bottom: 50px;
 }
