@@ -9,6 +9,10 @@ function displayProjectCard(project) {
     const projectTitle = document.createElement('div');
     projectTitle.classList.add('pTitle');
     projectTitle.innerHTML = project.getProjectTitle();
+    if (projectTitle.innerHTML === "") {
+        projectTitle.innerHTML = "New Project";
+    }
+
     const projectDescription = document.createElement('div');
     projectDescription.classList.add('pDescription');
     projectDescription.innerHTML = project.getProjectDescription();
