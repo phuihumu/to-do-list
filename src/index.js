@@ -3,6 +3,7 @@ import setTodoComplete from './updateTodoStatus';
 import changeTodoPriority from './changeTodoPriority';
 import displayPage from './displayPage';
 import displayCreateProject from './displayCreateProject';
+import {displayHeader, displayFooter} from './displayHeadFoot';
 import './style.css';
 
 const Tasks = () => {
@@ -23,7 +24,10 @@ const allProjects = () => {
 }
 
 const loadPage = (projects) => {
+    const element = document.querySelector('#content');
+    element.appendChild(displayHeader());
     displayPage(projectList.getListOfProjects());
+    element.appendChild(displayFooter());
 }
 
 //displayPage(getListOfProjects());
