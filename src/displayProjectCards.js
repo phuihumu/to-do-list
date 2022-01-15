@@ -18,11 +18,15 @@ function displayProjectCard(project) {
     const projectPriority = document.createElement('div');
     projectPriority.classList.add('pPriority');
     projectPriority.innerHTML = "Priority: " + project.getProjectPriority();
+    const projectStatus = document.createElement('div');
+    projectStatus.classList.add('pStatus');
+    projectStatus.innerHTML = "Status: " + project.getProjectStatus();
 
     projectLeft.appendChild(projectTitle);
     projectLeft.appendChild(projectDescription);
     projectLeft.appendChild(projectDue);
     projectLeft.appendChild(projectPriority);
+    projectLeft.appendChild(projectStatus);
 
     const projectRight = document.createElement('div');
     projectRight.classList.add('projectRight');

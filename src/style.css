@@ -35,7 +35,7 @@ body {
     flex-direction: column;
 }
 
-.pDescription, .pDate, .pPriority {
+.pDescription, .pDate, .pPriority, .pStatus {
     font-size: 17px;
     color: rgb(105, 105, 105);
 }
