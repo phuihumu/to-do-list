@@ -10,12 +10,14 @@ function createTodos() {
 }
 
 function defaultTodo() {
+    const projectsArray = [];
     const defaultProject = Project();
     defaultProject.setProjectTitle('New Project');
     defaultProject.setProjectDescription('Add a Description');
     defaultProject.setProjectDate('1/1/2021');
     defaultProject.setProjectPriority('Low');
-    return defaultProject;
+    projectsArray.push(defaultProject);
+    return projectsArray;
 }
 
 export {createTodos,defaultTodo};

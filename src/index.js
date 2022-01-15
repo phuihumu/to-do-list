@@ -15,7 +15,20 @@ const Tasks = () => {
     return {getTaskTitle,getTaskDescription,getTaskPriority,getTaskStatus}
 };
 
-displayPage(defaultTodo());
+const allProjects = () => {
+    let listOfProjects = defaultTodo();
+    const getListOfProjects = () => listOfProjects;
+    const addNewProject = (element) => listOfProjects.push(element);
+    return {getListOfProjects, addNewProject};
+}
+
+const loadPage = (projects) => {
+    displayPage(projectList.getListOfProjects());
+}
+
+//displayPage(getListOfProjects());
+const projectList = allProjects();
+loadPage(projectList);
 
 const newProjectBtn = document.querySelector(".newProjectButton");
 newProjectBtn.addEventListener("click", () => {
@@ -28,6 +41,8 @@ newProjectBtn.addEventListener("click", () => {
 
 const createProjBtn = document.querySelector(".createProjectButton");
 createProjBtn.addEventListener("click", () => {
+    projectList.addNewProject(createTodos());
     document.querySelector('.createScreenModal').style.display = "none";
+    loadPage(projectList);
 });
 
