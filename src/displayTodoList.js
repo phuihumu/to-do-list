@@ -17,4 +17,9 @@ function displayList(projects) {
     return todoList;
 }
 
-export default displayList;
+function addProject(project) {
+    const todoList = document.querySelector('.todoList');
+    todoList.appendChild(displayProjectCard(project));
+}
+
+export {displayList, addProject};

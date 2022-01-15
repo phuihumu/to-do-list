@@ -4,6 +4,7 @@ import changeTodoPriority from './changeTodoPriority';
 import displayPage from './displayPage';
 import displayCreateProject from './displayCreateProject';
 import {displayHeader, displayFooter} from './displayHeadFoot';
+import {addProject} from './displayTodoList';
 import './style.css';
 
 const Tasks = () => {
@@ -47,6 +48,6 @@ const createProjBtn = document.querySelector(".createProjectButton");
 createProjBtn.addEventListener("click", () => {
     projectList.addNewProject(createTodos());
     document.querySelector('.createScreenModal').style.display = "none";
-    loadPage(projectList);
+    addProject(createTodos());
 });
 

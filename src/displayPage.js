@@ -1,4 +1,4 @@
-import displayList from './displayTodoList';
+import {displayList} from './displayTodoList';
 import displayCreateProject from './displayCreateProject';
 
 function displayPage(project) {
