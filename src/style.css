@@ -44,6 +44,18 @@ body {
     text-transform: capitalize;
 }
 
+#high {
+    color:rgb(245, 84, 84);
+}
+
+#medium {
+    color: rgb(240, 216, 0);
+}
+
+#low {
+    color: rgb(57, 212, 57);
+}
+
 .editIcon {
     width: 100%;
     height: auto;

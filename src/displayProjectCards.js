@@ -22,6 +22,8 @@ function displayProjectCard(project) {
     const projectPriority = document.createElement('div');
     projectPriority.classList.add('pPriority');
     projectPriority.innerHTML = "Priority: " + project.getProjectPriority();
+    projectPriority.id = project.getProjectPriority();
+
     const projectStatus = document.createElement('div');
     projectStatus.classList.add('pStatus');
     projectStatus.innerHTML = "Status: " + project.getProjectStatus();
