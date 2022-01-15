@@ -40,6 +40,10 @@ body {
     color: rgb(105, 105, 105);
 }
 
+.pPriority {
+    text-transform: capitalize;
+}
+
 .editIcon {
     width: 100%;
     height: auto;
