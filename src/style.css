@@ -107,6 +107,7 @@ body {
     padding: 15px;
     width: 35%;
     height: 370px;
+    position:relative;
 }
 
 .createTitle {
@@ -144,4 +145,10 @@ input, select {
 .todoList {
     position: relative;
     padding-bottom: 50px;
+}
+
+.closeIcon {
+    position:absolute;
+    top: 15px;
+    right: 15px;
 }

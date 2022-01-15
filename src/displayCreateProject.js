@@ -1,3 +1,4 @@
+import closeIcon from './close.png';
 
 function displayCreateProject() {
     const createScreenModal = document.createElement('div');
@@ -5,6 +6,10 @@ function displayCreateProject() {
 
     const createScreen = document.createElement('div');
     createScreen.classList.add('createScreen');
+
+    const close = new Image();
+    close.src = closeIcon;
+    close.classList.add('closeIcon');
 
     const createTitle = document.createElement('div');
     createTitle.classList.add('createTitle');
@@ -72,6 +77,7 @@ function displayCreateProject() {
     createProjectContainer.appendChild(createPriorityLabel);
     createProjectContainer.appendChild(createPriorityInput);
 
+    createScreen.appendChild(close);
     createScreen.appendChild(createTitle);
     createScreen.appendChild(createProjectContainer);
     createScreen.appendChild(createProjectButton);

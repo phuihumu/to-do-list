@@ -13,9 +13,9 @@ function defaultTodo() {
     const projectsArray = [];
     const defaultProject = Project();
     defaultProject.setProjectTitle('New Project');
-    defaultProject.setProjectDescription('Add a Description');
+    defaultProject.setProjectDescription('');
     defaultProject.setProjectDate('2022-01-01');
-    defaultProject.setProjectPriority('Low');
+    defaultProject.setProjectPriority('');
     projectsArray.push(defaultProject);
     return projectsArray;
 }
