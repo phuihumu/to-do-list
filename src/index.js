@@ -5,6 +5,7 @@ import displayPage from './displayPage';
 import displayCreateProject from './displayCreateProject';
 import {displayHeader, displayFooter} from './displayHeadFoot';
 import {addProject} from './displayTodoList';
+import displayEditProject from './displayEditProject';
 import './style.css';
 
 const Tasks = () => {
@@ -54,5 +55,13 @@ createProjBtn.addEventListener("click", () => {
 const closeCreateScreen = document.querySelector('.closeIcon');
 closeCreateScreen.addEventListener("click", () => {
     document.querySelector('.createScreenModal').style.display = "none";
+});
+
+const editProjectButtons = document.querySelector('#content');
+editProjectButtons.addEventListener("click", function(e) {
+    if (e.target && e.target.classList.contains('editIcon')) {
+        displayEditProject();
+        document.querySelector('.createScreenModal').style.display = "flex";
+    }
 });
 
