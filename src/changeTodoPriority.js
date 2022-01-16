@@ -1,6 +1,6 @@
 
 function changeTodoPriority(project, newPriority) {
-    project.priority = newPriority;
+    project.setProjectPriority(newPriority);
 }
 
 export default changeTodoPriority;

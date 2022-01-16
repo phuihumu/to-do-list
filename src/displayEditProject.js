@@ -10,6 +10,9 @@ function displayEditProject(project) {
     const editDescriptionInput = document.querySelector('#description');
     editDescriptionInput.value = project.getProjectDescription();
 
+    const editDateInput = document.querySelector('#date');
+    editDateInput.value = project.getProjectDueDate();
+
     const editPriorityInput = document.querySelector('#priority');
     editPriorityInput.value = project.getProjectPriority();
 
@@ -21,7 +24,6 @@ function displayEditProject(project) {
 function revertToDisplay() {
     
     document.querySelector('.createTitle').innerHTML = 'Create New Project';
-
     document.querySelector('.createProjectButton').innerHTML = 'Create';
 }
 
