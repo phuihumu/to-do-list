@@ -3,6 +3,7 @@ import editIcon from './edit.png';
 function displayProjectCard(project) {
     const projectCard = document.createElement('div');
     projectCard.classList.add('project');
+    projectCard._variable = project;
 
     const projectLeft = document.createElement('div');
     projectLeft.classList.add('projectLeft');

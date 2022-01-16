@@ -59,13 +59,15 @@ createProjBtn.addEventListener("click", function(e) {
 
 const closeCreateScreen = document.querySelector('.closeIcon');
 closeCreateScreen.addEventListener("click", () => {
+    revertToDisplay();
     document.querySelector('.createScreenModal').style.display = "none";
 });
 
 const editProjectButtons = document.querySelector('#content');
 editProjectButtons.addEventListener("click", function(e) {
     if (e.target && e.target.classList.contains('editIcon')) {
-        displayEditProject();
+        displayEditProject(e.target.parentElement.parentElement._variable);
+        console.log(e.target.parentElement.parentElement._variable);
         document.querySelector('.createScreenModal').style.display = "flex";
     }
 });
