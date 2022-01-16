@@ -18,4 +18,11 @@ function displayEditProject() {
 
 }
 
-export default displayEditProject;
+function revertToDisplay() {
+    
+    document.querySelector('.createTitle').innerHTML = 'Create New Project';
+
+    document.querySelector('.createProjectButton').innerHTML = 'Create';
+}
+
+export {displayEditProject,revertToDisplay};

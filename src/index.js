@@ -5,7 +5,7 @@ import displayPage from './displayPage';
 import displayCreateProject from './displayCreateProject';
 import {displayHeader, displayFooter} from './displayHeadFoot';
 import {addProject} from './displayTodoList';
-import displayEditProject from './displayEditProject';
+import {displayEditProject,revertToDisplay} from './displayEditProject';
 import './style.css';
 
 const Tasks = () => {
@@ -46,10 +46,15 @@ newProjectBtn.addEventListener("click", () => {
 });
 
 const createProjBtn = document.querySelector(".createProjectButton");
-createProjBtn.addEventListener("click", () => {
-    projectList.addNewProject(createTodos());
+createProjBtn.addEventListener("click", function(e) {
+    if (e.target && e.target.innerHTML == 'Edit') {
+        revertToDisplay();
+    }
+    else {
+        projectList.addNewProject(createTodos());
+        addProject(createTodos());
+    }
     document.querySelector('.createScreenModal').style.display = "none";
-    addProject(createTodos());
 });
 
 const closeCreateScreen = document.querySelector('.closeIcon');
