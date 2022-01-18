@@ -4,6 +4,7 @@ import {displayHeader, displayFooter} from './displayHeadFoot';
 import {addProject} from './displayTodoList';
 import {displayEditProject,revertToDisplay} from './displayEditProject';
 import {editProject,updateStatus} from './updateProject';
+import {updateProjectCard} from './displayProjectCards';
 import './style.css';
 
 const Tasks = () => {
@@ -20,7 +21,8 @@ const allProjects = () => {
     let listOfProjects = defaultTodo();
     const getListOfProjects = () => listOfProjects;
     const addNewProject = (element) => listOfProjects.push(element);
-    return {getListOfProjects, addNewProject};
+    const length = () => listOfProjects.length;
+    return {getListOfProjects, addNewProject,length};
 }
 
 const loadPage = (projects) => {
@@ -47,13 +49,14 @@ newProjectBtn.addEventListener("click", () => {
 const createProjBtn = document.querySelector(".createProjectButton");
 createProjBtn.addEventListener("click", function(e) {
     if (e.target && e.target.innerHTML == 'Edit') {
-        revertToDisplay();
         let proj = stack.pop();
-        editProject(proj);
+        editProject(proj._variable);
+        updateProjectCard(proj);
+        revertToDisplay();
     }
     else {
         projectList.addNewProject(createTodos());
-        addProject(createTodos());
+        addProject(createTodos(), projectList.length()-1);
     }
     document.querySelector('.createScreenModal').style.display = "none";
 });
@@ -70,7 +73,8 @@ closeCreateScreen.addEventListener("click", () => {
 const editProjectButtons = document.querySelector('#content');
 editProjectButtons.addEventListener("click", function(e) {
     if (e.target && e.target.classList.contains('editIcon')) {
-        stack.push(e.target.parentElement.parentElement._variable);
+        const proj = e.target.parentElement.parentElement;
+        stack.push(proj);
         displayEditProject(e.target.parentElement.parentElement._variable);
         console.log(e.target.parentElement.parentElement._variable);
         document.querySelector('.createScreenModal').style.display = "flex";

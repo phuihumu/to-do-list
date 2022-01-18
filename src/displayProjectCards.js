@@ -49,4 +49,12 @@ function displayProjectCard(project) {
     return projectCard;
 }
 
-export default displayProjectCard;
+function updateProjectCard(project) {
+    project.querySelector('.pTitle').innerHTML = project._variable.getProjectTitle();
+    project.querySelector('.pDescription').innerHTML = project._variable.getProjectDescription();
+    project.querySelector('.pDate').innerHTML = "Due Date: " + project._variable.getProjectDueDate();
+    project.querySelector('.pPriority').innerHTML = "Priority: " + project._variable.getProjectPriority();
+    project.querySelector('.pStatus').innerHTML = "Status: " + project._variable.getProjectStatus();
+}
+
+export {displayProjectCard, updateProjectCard};
