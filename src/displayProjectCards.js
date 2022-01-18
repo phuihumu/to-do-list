@@ -50,10 +50,14 @@ function displayProjectCard(project) {
     checked.src = checkedIcon;
     checked.classList.add('checkIcon')
     checked.id = 'checked';
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete');
+    deleteButton.innerHTML = "Delete";
 
     projectRight.appendChild(edit);
     projectRight.appendChild(unchecked);
     projectRight.appendChild(checked);
+    projectRight.appendChild(deleteButton);
 
     projectCard.appendChild(projectLeft);
     projectCard.appendChild(projectRight);
