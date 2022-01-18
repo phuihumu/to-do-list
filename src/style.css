@@ -34,6 +34,7 @@ body {
     padding: 20px;
     margin-bottom: 15px;
     justify-content: space-between;
+    position: relative;
 }
 
 .projectLeft, .projectRight {
@@ -66,6 +67,13 @@ body {
     width: 100%;
     height: auto;
     cursor: pointer;
+}
+
+.uncheckedIcon {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 .newProjectButton {

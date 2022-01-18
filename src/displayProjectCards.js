@@ -1,4 +1,6 @@
 import editIcon from './edit.png';
+import uncheckedIcon from './uncheckedBox.png';
+import checkedIcon from './checkedBox.png';
 
 function displayProjectCard(project) {
     const projectCard = document.createElement('div');
@@ -40,8 +42,12 @@ function displayProjectCard(project) {
     const edit = new Image();
     edit.src = editIcon;
     edit.classList.add('editIcon');
+    const unchecked = new Image();
+    unchecked.src = uncheckedIcon;
+    unchecked.classList.add('uncheckedIcon');
 
     projectRight.appendChild(edit);
+    projectRight.appendChild(unchecked);
 
     projectCard.appendChild(projectLeft);
     projectCard.appendChild(projectRight);
