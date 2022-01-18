@@ -5,6 +5,7 @@ import {addProject} from './displayTodoList';
 import {displayEditProject,revertToDisplay} from './displayEditProject';
 import {editProject,updateStatus} from './updateProject';
 import {updateProjectCard} from './displayProjectCards';
+import removeProject from './removeProject';
 import './style.css';
 
 const Tasks = () => {
@@ -62,7 +63,7 @@ createProjBtn.addEventListener("click", function(e) {
 });
 
 const closeCreateScreen = document.querySelector('.closeIcon');
-closeCreateScreen.addEventListener("click", () => {
+closeCreateScreen.addEventListener("click", function(e) {
     if (e.target && e.target.innerHTML == 'Edit') {
         stack.pop();
     }

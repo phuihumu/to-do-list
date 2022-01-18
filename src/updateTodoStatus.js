@@ -1,4 +1,3 @@
-import Project from './projectObject';
 
 function setTodoComplete(project) {
     if (project.getProjectStatus() === "Incomplete") {
