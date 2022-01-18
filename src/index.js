@@ -1,7 +1,7 @@
 import {createTodos, defaultTodo} from './createTodos';
 import displayPage from './displayPage';
 import {displayHeader, displayFooter} from './displayHeadFoot';
-import {addProject} from './displayTodoList';
+import {addProject,removeProjectDisplay} from './displayTodoList';
 import {displayEditProject,revertToDisplay} from './displayEditProject';
 import {editProject,updateStatus} from './updateProject';
 import {updateProjectCard} from './displayProjectCards';
@@ -23,7 +23,9 @@ const allProjects = () => {
     const getListOfProjects = () => listOfProjects;
     const addNewProject = (element) => listOfProjects.push(element);
     const length = () => listOfProjects.length;
-    return {getListOfProjects, addNewProject,length};
+    const indexOf = (proj) => listOfProjects.indexOf(proj);
+    const splice = (index, num) => listOfProjects.splice(index,num);
+    return {getListOfProjects, addNewProject,length,indexOf,splice};
 }
 
 const loadPage = (projects) => {
@@ -89,4 +91,13 @@ statusCheckButton.addEventListener("click", function(e) {
         updateProjectCard(proj);
     }
 });
+
+const deleteButton = document.querySelector('#content');
+deleteButton.addEventListener("click", function(e) {
+    if (e.target && e.target.classList.contains('delete')) {
+        const proj = e.target.parentElement.parentElement;
+        removeProject(projectList, proj._variable);
+        removeProjectDisplay(proj);
+    }
+})
 

@@ -22,4 +22,9 @@ function addProject(project) {
     todoList.appendChild(displayProjectCard(project));
 }
 
-export {displayList, addProject};
+function removeProjectDisplay(project) {
+    const todoList = document.querySelector('.todoList');
+    todoList.removeChild(project);
+}
+
+export {displayList, addProject, removeProjectDisplay};
