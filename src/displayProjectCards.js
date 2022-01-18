@@ -54,6 +54,8 @@ function updateProjectCard(project) {
     project.querySelector('.pDescription').innerHTML = project._variable.getProjectDescription();
     project.querySelector('.pDate').innerHTML = "Due Date: " + project._variable.getProjectDueDate();
     project.querySelector('.pPriority').innerHTML = "Priority: " + project._variable.getProjectPriority();
+    console.log(project._variable.getProjectPriority());
+    project.querySelector('.pPriority').id = project._variable.getProjectPriority();
     project.querySelector('.pStatus').innerHTML = "Status: " + project._variable.getProjectStatus();
 }
 

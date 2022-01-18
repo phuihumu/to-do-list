@@ -76,7 +76,6 @@ editProjectButtons.addEventListener("click", function(e) {
         const proj = e.target.parentElement.parentElement;
         stack.push(proj);
         displayEditProject(e.target.parentElement.parentElement._variable);
-        console.log(e.target.parentElement.parentElement._variable);
         document.querySelector('.createScreenModal').style.display = "flex";
     }
 });
