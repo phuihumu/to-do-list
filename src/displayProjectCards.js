@@ -44,10 +44,16 @@ function displayProjectCard(project) {
     edit.classList.add('editIcon');
     const unchecked = new Image();
     unchecked.src = uncheckedIcon;
-    unchecked.classList.add('uncheckedIcon');
+    unchecked.classList.add('checkIcon');
+    unchecked.id = 'unchecked';
+    const checked = new Image();
+    checked.src = checkedIcon;
+    checked.classList.add('checkIcon')
+    checked.id = 'checked';
 
     projectRight.appendChild(edit);
     projectRight.appendChild(unchecked);
+    projectRight.appendChild(checked);
 
     projectCard.appendChild(projectLeft);
     projectCard.appendChild(projectRight);
@@ -62,6 +68,15 @@ function updateProjectCard(project) {
     project.querySelector('.pPriority').innerHTML = "Priority: " + project._variable.getProjectPriority();
     project.querySelector('.pPriority').id = project._variable.getProjectPriority();
     project.querySelector('.pStatus').innerHTML = "Status: " + project._variable.getProjectStatus();
+
+    if (project._variable.getProjectStatus() === "Incomplete") {
+        project.querySelector('#unchecked').style.display = "flex";
+        project.querySelector('#checked').style.display = "none";
+    }
+    else {
+        project.querySelector('#unchecked').style.display = "none";
+        project.querySelector('#checked').style.display = "flex";
+    }
 }
 
 export {displayProjectCard, updateProjectCard};

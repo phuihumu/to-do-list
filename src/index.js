@@ -80,3 +80,12 @@ editProjectButtons.addEventListener("click", function(e) {
     }
 });
 
+const statusCheckButton = document.querySelector('#content');
+statusCheckButton.addEventListener("click", function(e) {
+    if (e.target && e.target.classList.contains('checkIcon')) {
+        const proj = e.target.parentElement.parentElement;
+        updateStatus(proj._variable);
+        updateProjectCard(proj);
+    }
+});
+

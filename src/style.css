@@ -69,11 +69,19 @@ body {
     cursor: pointer;
 }
 
-.uncheckedIcon {
+.checkIcon {
     cursor: pointer;
     position: absolute;
     right: 20px;
     bottom: 20px;
+}
+
+#unchecked {
+    display: flex;
+}
+
+#checked {
+    display: none;
 }
 
 .newProjectButton {
