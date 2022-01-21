@@ -7,36 +7,57 @@ import {editProject,updateStatus} from './updateProject';
 import {updateProjectCard} from './displayProjectCards';
 import removeProject from './removeProject';
 import './style.css';
-
-const Tasks = () => {
-    let title, description, priority;
-    let status = "Incomplete";
-    const getTaskTitle = () => title;
-    const getTaskDescription = () => description;
-    const getTaskPriority = () => priority;
-    const getTaskStatus = () => status;
-    return {getTaskTitle,getTaskDescription,getTaskPriority,getTaskStatus}
-};
-
-const allProjects = () => {
-    let listOfProjects = defaultTodo();
-    const getListOfProjects = () => listOfProjects;
-    const addNewProject = (element) => listOfProjects.push(element);
-    const length = () => listOfProjects.length;
-    const indexOf = (proj) => listOfProjects.indexOf(proj);
-    const splice = (index, num) => listOfProjects.splice(index,num);
-    return {getListOfProjects, addNewProject,length,indexOf,splice};
-}
+import Project from './projectObject';
 
 const loadPage = (projects) => {
     const element = document.querySelector('#content');
     element.appendChild(displayHeader());
-    displayPage(projectList.getListOfProjects());
+    displayPage(projects);
     element.appendChild(displayFooter());
 }
 
-//displayPage(getListOfProjects());
-const projectList = allProjects();
+let projectList = defaultTodo();
+
+function getFromStorage() {
+    const reference = localStorage.getItem('projectList');
+    if (reference != null) {
+        let projectListParsed = JSON.parse(reference);
+        let storageList = [];
+        projectListParsed.forEach(element => {
+            let parsedProject = Project();
+            parsedProject.setProjectTitle(element.title);
+            parsedProject.setProjectDescription(element.description);
+            parsedProject.setProjectDate(element.dueDate);
+            parsedProject.setProjectPriority(element.priority);
+            parsedProject.setProjectStatus(element.status);
+            storageList.push(parsedProject);
+        })
+
+        projectList = storageList;
+    }
+}
+
+function populateStorage(list) {
+    let storageList = [];
+    list.forEach(element => {
+        storageList.push(parseProjects(element));
+    });
+    localStorage.setItem('projectList', JSON.stringify(storageList));
+}
+
+function parseProjects(project) {
+    let parsedProject = {
+        title: project.getProjectTitle(),
+        description: project.getProjectDescription(),
+        dueDate: project.getProjectDueDate(),
+        priority: project.getProjectPriority(),
+        status: project.getProjectStatus()
+    };
+
+    return parsedProject;
+}
+
+getFromStorage();
 const stack = [];
 loadPage(projectList);
 
@@ -56,10 +77,12 @@ createProjBtn.addEventListener("click", function(e) {
         editProject(proj._variable);
         updateProjectCard(proj);
         revertToDisplay();
+        populateStorage(projectList);
     }
     else {
-        projectList.addNewProject(createTodos());
-        addProject(createTodos(), projectList.length()-1);
+        projectList.push(createTodos());
+        populateStorage(projectList);
+        addProject(createTodos());
     }
     document.querySelector('.createScreenModal').style.display = "none";
 });
@@ -89,6 +112,7 @@ statusCheckButton.addEventListener("click", function(e) {
         const proj = e.target.parentElement.parentElement;
         updateStatus(proj._variable);
         updateProjectCard(proj);
+        populateStorage(projectList);
     }
 });
 
@@ -98,6 +122,7 @@ deleteButton.addEventListener("click", function(e) {
         const proj = e.target.parentElement.parentElement;
         removeProject(projectList, proj._variable);
         removeProjectDisplay(proj);
+        populateStorage(projectList);
     }
 })
 

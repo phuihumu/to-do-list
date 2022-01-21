@@ -5,7 +5,7 @@ function displayList(projects) {
     todoList.classList.add('todoList');
 
     projects.forEach(element => {
-        todoList.appendChild(displayProjectCard(element, projects.indexOf(element)));
+        todoList.appendChild(displayProjectCard(element));
     });
 
     const newProject = document.createElement('button');
