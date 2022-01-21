@@ -54,6 +54,11 @@ function displayProjectCard(project) {
     deleteButton.classList.add('delete');
     deleteButton.innerHTML = "Delete";
 
+    if (project.getProjectStatus() === "Complete") {
+        unchecked.style.display = "none";
+        checked.style.display = "flex";
+    }
+
     projectRight.appendChild(edit);
     projectRight.appendChild(unchecked);
     projectRight.appendChild(checked);
